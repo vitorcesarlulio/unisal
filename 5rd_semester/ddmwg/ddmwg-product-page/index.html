@@ -1,0 +1,282 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cadastro de produto</title>
+  <meta name="description" content="Cadastro de produtos">
+  <meta name="author" content="vitorcesarlulio">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Referência ao ícone usado nos dispositivos Apple quando a página é adicionada à tela inicial do usuário -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Boostrap -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/compiler/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    /* hr {
+      border-top: none !important;
+    } */
+    .text-bg-dark {
+      background-color: #161b22 !important;
+    }
+
+    .text-bg-dark {
+      background-color: #161b22 !important;
+    }
+
+    .offcanvas-backdrop {
+      background-color: none !important;
+    }
+
+    body {
+      background-color: #FAFCFE !important;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header class="p-3 text-bg-dark">
+      <div class="container" style="margin-left:0px">
+        <div class="align-items-center justify-content-center justify-content-lg-start">
+          <div class="bd-navbar-toggle">
+            <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+      style="width: 280px;">
+      <div class="flex-column p-3 text-bg-dark" style="width: 280px;height: 100%">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="assets/img/box.png" alt="HTML tutorial" style="width:32px;height:32px;margin-right:10px">
+          <span class="fs-4">Box</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+                viewBox="0 0 16 16">
+                <path
+                  d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+              </svg>
+              Products
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <h3 style="text-align: left;">Produtos</h3>
+        <div class="row">
+          <div class="input-group mb-3 col-4">
+            <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar"
+              aria-describedby="basic-addon1">
+              <button type="button" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Produto</th>
+              <th scope="col">Quantia</th>
+              <th scope="col">Localização</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Fabricante</th>
+              <th scope="col">Cadastro</th>
+              <th scope="col">Departamento</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Toalha</td>
+              <td>5 un.</td>
+              <td>Andar II</td>
+              <td>R$ 5,59</td>
+              <td>Santista</td>
+              <td>13/03/2023</td>
+              <td>Higiene</td>
+              <td><button type="button" class="btn btn-warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-danger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form id="formRegisterUser" method="POST" autocomplete="off" enctype="multipart/form-data"></form>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Descrição</label><label style="color: red; font-size: 12px;">*</label>
+                  <input type="text" name="" id="" required="true" class="form-control"
+                    placeholder="Entre com a Descrição" autofocus>
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, infrome um descrição válida.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="country" class="form-label">Unidade</label><label style="color: red; font-size: 12px;">*</label>
+                <select class="form-select" id="" required="true">
+                  <option value="">Escolha...</option>
+                  <option>UN - Unidade</option>
+                  <option>KG - Quilograma</option>
+                  <option>LT - Litros</option>
+                  <option>MT - Metros</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, selecione uma medida válida.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="country" class="form-label">Localização</label><label style="color: red; font-size: 12px;">*</label>
+                <select class="form-select" id="" required="true">
+                  <option value="">Escolha...</option>
+                  <option>Andar I</option>
+                  <option>Andar II</option>
+                  <option>Térreo</option>
+                  <option>Sala 03</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, selecione uma localização válida.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Preço de aquisição</label><label style="color: red; font-size: 12px;">*</label>
+                  <input type="text" name="" id="" required="true" class="form-control"
+                    placeholder="Entre com o preço de aquisição">
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, infrome um preço de aquisição válido.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="country" class="form-label">Fabricante</label><label style="color: red; font-size: 12px;">*</label>
+                <select class="form-select" id="" required="true">
+                  <option value="">Escolha...</option>
+                  <option>Santista</option>
+                  <option>Fabricante 2</option>
+                  <option>Fabricante 2</option>
+                  <option>Fabricante 3</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, selecione uma localização válida.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="country" class="form-label">Departamento</label><label style="color: red; font-size: 12px;">*</label>
+                <select class="form-select" id="" required="true">
+                  <option value="">Escolha...</option>
+                  <option>TI</option>
+                  <option>Departamento 1</option>
+                  <option>Departamento 2</option>
+                  <option>Departamento 3</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, selecione uma localização válida.
+                </div>
+              </div>
+
+              <!-- data de cadastro não seria data de hoje? se nao, trazer data de hoje -->
+              <!-- ajustar form/modal -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">Salvar</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+
+
+  </main>
+  <!-- Boostrap -->
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- Scripts -->
+  <script src="js/scripts.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
